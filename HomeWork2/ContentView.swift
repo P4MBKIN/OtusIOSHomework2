@@ -9,10 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        List {
-            Text("Hello, World!")
-        }
+        NewsListView(topic: "Apple").environmentObject(NewsListViewModel(topic: "Apple"))
     }
 }
 
