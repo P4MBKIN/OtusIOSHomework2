@@ -9,11 +9,25 @@
 import SwiftUI
 
 struct ArticleView: View {
-
+    
     var article: Article
-
+    
     var body: some View {
-        Text(article.author ?? "Unknowned author")
+        VStack(alignment: .leading, spacing: 5.0){
+            Text(article.title ?? "Unknowned title")
+                .font(.title)
+            HStack(alignment: .center, spacing: 10.0){
+                Text(article.author ?? "Unknowned author")
+                    .font(.subheadline)
+                Spacer()
+                HStack {
+                    Image(systemName: "clock")
+                    Text(article.publishedAt ?? "??:??:??")
+                }
+            }
+            Text(article.content ?? "Content")
+        }
+        .padding()
     }
 }
 

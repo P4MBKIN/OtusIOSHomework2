@@ -10,8 +10,33 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var selectedIndex = 0
+    @State private var topics = ["Apple", "bitcoin", "Microsoft"]
+    
     var body: some View {
-        NewsListView(topic: "Apple").environmentObject(NewsListViewModel(topic: "Apple"))
+        VStack {
+            Picker("Topics", selection: $selectedIndex) {
+                ForEach(0 ..< topics.count) { index in
+                    Text(self.topics[index]).tag(index)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            
+            TabView(selection: $selectedIndex) {
+                NewsListView().environmentObject(NewsListViewModel(topic: topics[selectedIndex]))
+                    .tabItem {
+                        EmptyView()
+                }.tag(0)
+                NewsListView().environmentObject(NewsListViewModel(topic: topics[selectedIndex]))
+                    .tabItem{
+                        EmptyView()
+                }.tag(1)
+                NewsListView().environmentObject(NewsListViewModel(topic: topics[selectedIndex]))
+                    .tabItem{
+                        EmptyView()
+                }.tag(2)
+            }
+        }
     }
 }
 

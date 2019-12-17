@@ -14,7 +14,7 @@ final class NewsListViewModel: ObservableObject {
     @Published private(set) var pageIndex: Int = 0
     @Published private(set) var isNewPageLoading = false
     
-    private var topic: String
+    @Published private(set) var topic: String
     
     init(topic: String) {
         self.topic = topic
@@ -24,7 +24,6 @@ final class NewsListViewModel: ObservableObject {
         guard isNewPageLoading == false else { return }
         isNewPageLoading = true
         self.pageIndex += 1
-        
         ArticlesAPI.everythingGet(q: topic, from: "2019-12-01", sortBy: "publishedAt", apiKey: "428cdc3ea75045248447b7f8c444d298", page: pageIndex) { list, error in
             if let error = error {
                 print("\(error)")

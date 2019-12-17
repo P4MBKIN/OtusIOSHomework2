@@ -11,25 +11,20 @@ import SwiftUI
 struct NewsListView: View {
     
     @EnvironmentObject var newsListViewModel: NewsListViewModel
-    
-    var topic: String
 
     var body: some View {
-        NavigationView {
-            List(newsListViewModel.articles) { article in
-                VStack(alignment: .leading) {
-                    Text(article.title ?? "")
-                    if self.newsListViewModel.isNewPageLoading && self.newsListViewModel.articles.isLastItem(article) {
-                        Divider()
-                        Text("Loading...")
-                    }
-                }.onAppear {
-                    self.onItemShowed(article)
+        List(newsListViewModel.articles) { article in
+            VStack(alignment: .leading) {
+                ArticleView(article: article)
+                if self.newsListViewModel.isNewPageLoading && self.newsListViewModel.articles.isLastItem(article) {
+                    Divider()
+                    Text("Loading...")
                 }
-            }.onAppear() {
-                self.newsListViewModel.pageLoad()
+            }.onAppear {
+                self.onItemShowed(article)
             }
-        .navigationBarTitle(topic)
+        }.onAppear() {
+            self.newsListViewModel.pageLoad()
         }
     }
 }
@@ -50,6 +45,6 @@ extension Article: Identifiable {
 
 struct NewsListView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsListView(topic: "Apple").environmentObject(NewsListViewModel(topic: "Apple"))
+        NewsListView().environmentObject(NewsListViewModel(topic: "Apple"))
     }
 }
