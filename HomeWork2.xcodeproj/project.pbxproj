@@ -32,6 +32,8 @@
 		CE758CBC23A7981C00A25A10 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE758CBB23A7981C00A25A10 /* Collection.swift */; };
 		CE758CBE23A7A62500A25A10 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE758CBD23A7A62500A25A10 /* NewsListViewModel.swift */; };
 		CE758CC023A7AD4300A25A10 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE758CBF23A7AD4300A25A10 /* ArticleView.swift */; };
+		CE758CC623AA703F00A25A10 /* UIScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE758CC523AA703F00A25A10 /* UIScrollViewWrapper.swift */; };
+		CE758CC823AA74A500A25A10 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE758CC723AA74A500A25A10 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		CE758CBB23A7981C00A25A10 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		CE758CBD23A7A62500A25A10 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		CE758CBF23A7AD4300A25A10 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		CE758CC523AA703F00A25A10 /* UIScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewWrapper.swift; sourceTree = "<group>"; };
+		CE758CC723AA74A500A25A10 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,10 @@
 				CE758CBF23A7AD4300A25A10 /* ArticleView.swift */,
 				CE41306123A75F14000AE7FC /* SceneDelegate.swift */,
 				CE41306323A75F14000AE7FC /* ContentView.swift */,
+				CE758CC723AA74A500A25A10 /* Coordinator.swift */,
 				CE758CB823A7921300A25A10 /* NewsListView.swift */,
 				CE758CBD23A7A62500A25A10 /* NewsListViewModel.swift */,
+				CE758CC523AA703F00A25A10 /* UIScrollViewWrapper.swift */,
 				CE41306523A75F1A000AE7FC /* Assets.xcassets */,
 				CE41306A23A75F1A000AE7FC /* LaunchScreen.storyboard */,
 				CE41306D23A75F1A000AE7FC /* Info.plist */,
@@ -257,8 +263,10 @@
 				CE758CB223A78B9600A25A10 /* Article.swift in Sources */,
 				CE758CB623A78B9600A25A10 /* Models.swift in Sources */,
 				CE758CAF23A78B9600A25A10 /* APIs.swift in Sources */,
+				CE758CC823AA74A500A25A10 /* Coordinator.swift in Sources */,
 				CE758CB023A78B9600A25A10 /* Source.swift in Sources */,
 				CE758CAC23A78B9600A25A10 /* ArticlesAPI.swift in Sources */,
+				CE758CC623AA703F00A25A10 /* UIScrollViewWrapper.swift in Sources */,
 				CE758CC023A7AD4300A25A10 /* ArticleView.swift in Sources */,
 				CE758CB423A78B9600A25A10 /* Extensions.swift in Sources */,
 			);

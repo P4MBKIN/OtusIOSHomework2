@@ -11,20 +11,23 @@ import SwiftUI
 struct NewsListView: View {
     
     @EnvironmentObject var newsListViewModel: NewsListViewModel
-
+    
     var body: some View {
-        List(newsListViewModel.articles) { article in
-            VStack(alignment: .leading) {
-                ArticleView(article: article)
-                if self.newsListViewModel.isNewPageLoading && self.newsListViewModel.articles.isLastItem(article) {
-                    Divider()
-                    Text("Loading...")
+        VStack {
+            UIScrollViewWrapper().frame(height: 60)
+            List(newsListViewModel.articles) { article in
+                VStack(alignment: .leading) {
+                    ArticleView(article: article)
+                    if self.newsListViewModel.isNewPageLoading && self.newsListViewModel.articles.isLastItem(article) {
+                        Divider()
+                        Text("Loading...")
+                    }
+                }.onAppear {
+                    self.onItemShowed(article)
                 }
-            }.onAppear {
-                self.onItemShowed(article)
+            }.onAppear() {
+                self.newsListViewModel.pageLoad()
             }
-        }.onAppear() {
-            self.newsListViewModel.pageLoad()
         }
     }
 }

@@ -14,10 +14,16 @@ final class NewsListViewModel: ObservableObject {
     @Published private(set) var pageIndex: Int = 0
     @Published private(set) var isNewPageLoading = false
     
-    @Published private(set) var topic: String
+    @Published var topic: String
     
     init(topic: String) {
         self.topic = topic
+        refresh()
+    }
+    
+    func refresh() {
+        articles = []
+        pageIndex = 0
     }
     
     func pageLoad() {
